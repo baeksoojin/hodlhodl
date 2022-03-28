@@ -1,0 +1,5 @@
+template 사용방법
+
+1. 앱 별로 구분하기. => django app 이름 별로 폴더를 만들어, 하위경로에 .html파일 생성.
+2. views.py에서 페이지 랜더링 => return render(request, '[앱이름]/[템플릿이름].html,context) => context에 데이터를 담아보냄(유무 선택)
+3. context에 data를 넘겼다면? html code에서 데이터를 처리하는 코드 작성.

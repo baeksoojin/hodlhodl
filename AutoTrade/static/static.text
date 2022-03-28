@@ -1,0 +1,9 @@
+부트스트랩 사용방법.
+
+1. 참고영상 : https://www.youtube.com/watch?v=jS4fLseF_cs => 영상참고
+2. {% load 'static' %}
+3. head -> <link rel = "stylesheet" tyle=" "  href = '{% static "bootstrap/~~" %}'> 의 형태로 불러옴.
+
+이미지폴더 사용방법
+2. {% load 'static' %}
+3. <img src="{%static 'image/~~' %}
