@@ -305,7 +305,7 @@ h1, h2, h3, h4, h5, h6 {
   color: rgba(32, 175, 32, 0.9);
 }
 .navbar-mobile a:hover, .navbar-mobile .active, .navbar-mobile li:hover > a {
-  color: rgba(32, 175, 32, 0.9);
+  color: rgba(3, 46, 3, 0.9);
 }
 .navbar-mobile .getstarted, .navbar-mobile .getstarted:focus {
   margin: 15px;

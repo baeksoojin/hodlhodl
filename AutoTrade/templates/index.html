@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Bootslander Bootstrap Template - Index</title>
+  <title>AutoTrading</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -37,37 +37,21 @@
     <div class="container d-flex align-items-center justify-content-between">
 
       <div class="logo">
-        <h1><a href=" "><span>Bootslander</span></a></h1>
+        <h1><a href=" "><span>AutoTrading</span></a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src='{% static "img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href=" ">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">About</a></li>
-          <li><a class="nav-link scrollto" href="#features">Features</a></li>
-          <li><a class="nav-link scrollto" href="#gallery">Gallery</a></li>
+          <li><a class="nav-link scrollto active" href="">홈페이지</a></li>
+          <li><a class="nav-link scrollto" href="#about">소개</a></li>
+          <li><a class="nav-link scrollto" href="#features">기능보기</a></li>
+          <li><a class="nav-link scrollto" href="#details">기능상세보기</a></li>
+          <li><a class="nav-link scrollto" href="#AutoTrading">자동투자</a></li>
+          <li><a class="nav-link scrollto" href="#showData">데이터보기</a></li>
+          <li><a class="nav-link scrollto" href="#accuracy">성능보기</a></li>
           <li><a class="nav-link scrollto" href="#team">Team</a></li>
-          <li><a class="nav-link scrollto" href="#pricing">Pricing</a></li>
-          <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-            </ul>
-          </li>
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -82,18 +66,17 @@
       <div class="row justify-content-between">
         <div class="col-lg-7 pt-5 pt-lg-0 order-2 order-lg-1 d-flex align-items-center">
           <div data-aos="zoom-out">
-            <h1>Build Your Landing Page With <span>Bootstlander</span></h1>
-            <h2>We are team of talented designers making websites with Bootstrap</h2>
+            <h1> Experience stable coin investment with <span>AutoTrading</span></h1>
+            <h2> Our team consists of 4 people from the Department of Information and Communication Engineering, Dongguk University.</h2>
             <div class="text-center text-lg-start">
-              <form action = "/detail" method="post">
-                {% csrf_token %} <!--아무나 url을 사용할 수 없고 token을 가진사람만 허용-->
-                <button class = "btn" name="start" value="true">start</button>
-              </form>
+              <a href="detail" class="btn-get-started ">Get Started</a>
+            </div>
+            <div class="text-center text-lg-start">
             </div>
           </div>
         </div>
         <div class="col-lg-4 order-1 order-lg-2 hero-img" data-aos="zoom-out" data-aos-delay="300">
-          <img src='{% static "img/hero-img.png"  %}' class="img-fluid animated" alt="">
+          <img src='{% static "img/background.png"  %}' class="img-fluid animated" alt="">
         </div>
       </div>
     </div>
@@ -113,6 +96,7 @@
       </g>
     </svg>
 
+
   </section><!-- End Hero -->
 
   <main id="main">
@@ -122,30 +106,30 @@
       <div class="container-fluid">
 
         <div class="row">
-          <div class="col-xl-5 col-lg-6 video-box d-flex justify-content-center align-items-stretch" data-aos="fade-right">
+          <!-- <div class="col-xl-5 col-lg-6 video-box d-flex justify-content-center align-items-stretch" data-aos="fade-right">
             <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
-          </div>
+          </div> -->
 
           <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5" data-aos="fade-left">
-            <h3>Enim quis est voluptatibus aliquid consequatur fugiat</h3>
-            <p>Esse voluptas cumque vel exercitationem. Reiciendis est hic accusamus. Non ipsam et sed minima temporibus laudantium. Soluta voluptate sed facere corporis dolores excepturi. Libero laboriosam sint et id nulla tenetur. Suscipit aut voluptate.</p>
+            <h3>코인 자동매매 프로그램을 경험하세요</h3>
+            <p>  팀 hodlhodl은 AutoTrade 사이트를 통해 코인 자동매매 기능을 제공합니다. 코인에 대한 감정분석 결과와 종가 예측 결과 그리고 변동성 돌파전략을 종합하여 코인 최대낙폭을 줄여 안정적인 투자가 가능합니다.</p>
 
             <div class="icon-box" data-aos="zoom-in" data-aos-delay="100">
               <div class="icon"><i class="bx bx-fingerprint"></i></div>
-              <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-              <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+              <h4 class="title"><a href="#details">변동성 돌파전략</a></h4>
+              <p class="description">그 전날의 코인 데이터에 의해 결정된 target값을 이용하여 현재의 가격과 비교하며 매수를 결정</p>
             </div>
 
             <div class="icon-box" data-aos="zoom-in" data-aos-delay="200">
               <div class="icon"><i class="bx bx-gift"></i></div>
-              <h4 class="title"><a href="">Nemo Enim</a></h4>
-              <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
+              <h4 class="title"><a href="#details">감정분석 인공지능 모델</a></h4>
+              <p class="description"> 감정분석 결과가 긍정적일때, 매수를 진행</p>
             </div>
 
             <div class="icon-box" data-aos="zoom-in" data-aos-delay="300">
               <div class="icon"><i class="bx bx-atom"></i></div>
-              <h4 class="title"><a href="">Dine Pad</a></h4>
-              <p class="description">Explicabo est voluptatum asperiores consequatur magnam. Et veritatis odit. Sunt aut deserunt minus aut eligendi omnis</p>
+              <h4 class="title"><a href="#details">시계열 예측 인공지능 모델</a></h4>
+              <p class="description">예측 결과 종가가 목표값보다 높을때, 매수를 진행</p>
             </div>
 
           </div>
@@ -154,135 +138,68 @@
       </div>
     </section><!-- End About Section -->
 
-    <!-- ======= Features Section ======= -->
+    <!-- ======= stack Section ======= -->
     <section id="features" class="features">
       <div class="container">
 
         <div class="section-title" data-aos="fade-up">
-          <h2>Features</h2>
-          <p>Check The Features</p>
+          <h2>기술스택</h2>
+          <p>hodl hodl이 사용한 기술</p>
         </div>
 
         <div class="row" data-aos="fade-left">
           <div class="col-lg-3 col-md-4">
             <div class="icon-box" data-aos="zoom-in" data-aos-delay="50">
               <i class="ri-store-line" style="color: #ffbb2c;"></i>
-              <h3><a href="">Lorem Ipsum</a></h3>
+              <h3>Django</h3>
             </div>
           </div>
           <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
             <div class="icon-box" data-aos="zoom-in" data-aos-delay="100">
               <i class="ri-bar-chart-box-line" style="color: #5578ff;"></i>
-              <h3><a href="">Dolor Sitema</a></h3>
+              <h3>Mysql</h3>
             </div>
           </div>
           <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
             <div class="icon-box" data-aos="zoom-in" data-aos-delay="150">
               <i class="ri-calendar-todo-line" style="color: #e80368;"></i>
-              <h3><a href="">Sed perspiciatis</a></h3>
+              <h3>colab</h3>
             </div>
           </div>
           <div class="col-lg-3 col-md-4 mt-4 mt-lg-0">
             <div class="icon-box" data-aos="zoom-in" data-aos-delay="200">
               <i class="ri-paint-brush-line" style="color: #e361ff;"></i>
-              <h3><a href="">Magni Dolores</a></h3>
+              <h3>LSTM</h3>
             </div>
           </div>
           <div class="col-lg-3 col-md-4 mt-4">
             <div class="icon-box" data-aos="zoom-in" data-aos-delay="250">
               <i class="ri-database-2-line" style="color: #47aeff;"></i>
-              <h3><a href="">Nemo Enim</a></h3>
+              <h3>감정분석 인공지능 모델</h3>
             </div>
           </div>
           <div class="col-lg-3 col-md-4 mt-4">
             <div class="icon-box" data-aos="zoom-in" data-aos-delay="300">
               <i class="ri-gradienter-line" style="color: #ffa76e;"></i>
-              <h3><a href="">Eiusmod Tempor</a></h3>
+              <h3>Python</h3>
             </div>
           </div>
           <div class="col-lg-3 col-md-4 mt-4">
             <div class="icon-box" data-aos="zoom-in" data-aos-delay="350">
               <i class="ri-file-list-3-line" style="color: #11dbcf;"></i>
-              <h3><a href="">Midela Teren</a></h3>
+              <h3>HTML/CSS</h3>
             </div>
           </div>
           <div class="col-lg-3 col-md-4 mt-4">
             <div class="icon-box" data-aos="zoom-in" data-aos-delay="400">
               <i class="ri-price-tag-2-line" style="color: #4233ff;"></i>
-              <h3><a href="">Pira Neve</a></h3>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 mt-4">
-            <div class="icon-box" data-aos="zoom-in" data-aos-delay="450">
-              <i class="ri-anchor-line" style="color: #b2904f;"></i>
-              <h3><a href="">Dirada Pack</a></h3>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 mt-4">
-            <div class="icon-box" data-aos="zoom-in" data-aos-delay="500">
-              <i class="ri-disc-line" style="color: #b20969;"></i>
-              <h3><a href="">Moton Ideal</a></h3>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 mt-4">
-            <div class="icon-box" data-aos="zoom-in" data-aos-delay="550">
-              <i class="ri-base-station-line" style="color: #ff5828;"></i>
-              <h3><a href="">Verdo Park</a></h3>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 mt-4">
-            <div class="icon-box" data-aos="zoom-in" data-aos-delay="600">
-              <i class="ri-fingerprint-line" style="color: #29cc61;"></i>
-              <h3><a href="">Flavor Nivelanda</a></h3>
+              <h3>Javascript</h3>
             </div>
           </div>
         </div>
 
       </div>
     </section><!-- End Features Section -->
-
-    <!-- ======= Counts Section ======= -->
-    <section id="counts" class="counts">
-      <div class="container">
-
-        <div class="row" data-aos="fade-up">
-
-          <div class="col-lg-3 col-md-6">
-            <div class="count-box">
-              <i class="bi bi-emoji-smile"></i>
-              <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Happy Clients</p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
-            <div class="count-box">
-              <i class="bi bi-journal-richtext"></i>
-              <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Projects</p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
-            <div class="count-box">
-              <i class="bi bi-headset"></i>
-              <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Hours Of Support</p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
-            <div class="count-box">
-              <i class="bi bi-people"></i>
-              <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Hard Workers</p>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- End Counts Section -->
 
     <!-- ======= Details Section ======= -->
     <section id="details" class="details">
@@ -293,19 +210,18 @@
             <img src='{% static "img/details-1.png"  %}' class="img-fluid" alt="">
           </div>
           <div class="col-md-8 pt-4" data-aos="fade-up">
-            <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
+            <h3>변동성 돌파전략을 활용한 코인 자동트레이딩 기능</h3>
             <p class="fst-italic">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua.
+              오전 9시를 기준으로 종가와 시가를 계산할때, 그 전날의 코인 데이터에 의해 결정된 target값을 이용하여 현재의 가격과 비교하며 매수를 결정
             </p>
             <ul>
-              <li><i class="bi bi-check"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-              <li><i class="bi bi-check"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-              <li><i class="bi bi-check"></i> Iure at voluptas aspernatur dignissimos doloribus repudiandae.</li>
-              <li><i class="bi bi-check"></i> Est ipsa assumenda id facilis nesciunt placeat sed doloribus praesentium.</li>
+              <li><i class="bi bi-check"></i> 업비트 API를 활용해 코인관련 데이터를 불러옵니다.</li>
+              <li><i class="bi bi-check"></i> 9시를 기준으로 시가와 종가를 계산하고 전날과 현시점을 분리합니다.</li>
+              <li><i class="bi bi-check"></i> 전날의 코인데이터로 목표가를 설정하고 현재의 코인 가격을 비교합니다.</li>
+              <li><i class="bi bi-check"></i> 시계열 예측 결과와 코인에 대한 감정분석을 추가적으로 이용해 매수 결정을 내립니다.</li>
             </ul>
             <p>
-              Voluptas nisi in quia excepturi nihil voluptas nam et ut. Expedita omnis eum consequatur non. Sed in asperiores aut repellendus. Error quisquam ab maiores. Quibusdam sit in officia
+              코인 시계열 예측 모델과 감정분석 모델 결과를 활용해, 변동성 돌파전략을 세워 매수타이밍을 체크하여 자동적으로 코인을 트레이딩 시킴으로써, 최대 낙폭을 줄여 안정적인 투자를 지속할 수 있습니다.
             </p>
           </div>
         </div>
@@ -315,18 +231,15 @@
             <img src='{% static "img/details-2.png" %}' class="img-fluid" alt="">
           </div>
           <div class="col-md-8 pt-5 order-2 order-md-1" data-aos="fade-up">
-            <h3>Corporis temporibus maiores provident</h3>
+            <h3>감정분석 인공지능 모델을 활용한 코인에 대한 사람들의 인식분석</h3>
             <p class="fst-italic">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua.
+              감정분석 결과가 긍정적일때, 매수를 진행
             </p>
             <p>
-              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum
+              크롤링을 하여 불러온 문장 데이터를 인공지능을 활용해서 감정분석을 하고, 긍정적인 결과가 나올때 주식을 매수할 확률이 높아집니다.
             </p>
             <p>
-              Inventore id enim dolor dicta qui et magni molestiae. Mollitia optio officia illum ut cupiditate eos autem. Soluta dolorum repellendus repellat amet autem rerum illum in. Quibusdam occaecati est nisi esse. Saepe aut dignissimos distinctio id enim.
+              인공지능 모델 설명(작성예정)
             </p>
           </div>
         </div>
@@ -336,214 +249,29 @@
             <img src='{% static "img/details-3.png" %}' class="img-fluid" alt="">
           </div>
           <div class="col-md-8 pt-5" data-aos="fade-up">
-            <h3>Sunt consequatur ad ut est nulla consectetur reiciendis animi voluptas</h3>
-            <p>Cupiditate placeat cupiditate placeat est ipsam culpa. Delectus quia minima quod. Sunt saepe odit aut quia voluptatem hic voluptas dolor doloremque.</p>
-            <ul>
-              <li><i class="bi bi-check"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-              <li><i class="bi bi-check"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-              <li><i class="bi bi-check"></i> Facilis ut et voluptatem aperiam. Autem soluta ad fugiat.</li>
-            </ul>
+            <h3>LSTM을 활용한, 시계열 예측을 통한 코인 종가 예측</h3>
+            <p>예측 결과 종가가 목표값보다 높을때, 매수를 진행</p>
             <p>
-              Qui consequatur temporibus. Enim et corporis sit sunt harum praesentium suscipit ut voluptatem. Et nihil magni debitis consequatur est.
+              API를 통해 불러온 코인 데이터를 활용하여 인공지능 모델에 입력하고 그 결과로 나온 종가 결과가 변동성 돌파전략을 통해 구한 목표값보다 클 때 매수합니다.
             </p>
             <p>
-              Suscipit enim et. Ut optio esse quidem quam reiciendis esse odit excepturi. Vel dolores rerum soluta explicabo vel fugiat eum non.
+              인공지능 모델 설명(작성예정)
             </p>
-          </div>
-        </div>
-
-        <div class="row content">
-          <div class="col-md-4 order-1 order-md-2" data-aos="fade-left">
-            <img src='{% static "img/details-4.png" %}'  class="img-fluid" alt="">
-          </div>
-          <div class="col-md-8 pt-5 order-2 order-md-1" data-aos="fade-up">
-            <h3>Quas et necessitatibus eaque impedit ipsum animi consequatur incidunt in</h3>
-            <p class="fst-italic">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua.
-            </p>
-            <p>
-              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum
-            </p>
-            <ul>
-              <li><i class="bi bi-check"></i> Et praesentium laboriosam architecto nam .</li>
-              <li><i class="bi bi-check"></i> Eius et voluptate. Enim earum tempore aliquid. Nobis et sunt consequatur. Aut repellat in numquam velit quo dignissimos et.</li>
-              <li><i class="bi bi-check"></i> Facilis ut et voluptatem aperiam. Autem soluta ad fugiat.</li>
-            </ul>
           </div>
         </div>
 
       </div>
     </section><!-- End Details Section -->
 
-    <!-- ======= Gallery Section ======= -->
-    <section id="gallery" class="gallery">
-      <div class="container">
 
-        <div class="section-title" data-aos="fade-up">
-          <h2>Gallery</h2>
-          <p>Check our Gallery</p>
-        </div>
-
-        <div class="row g-0" data-aos="fade-left">
-
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
-              <a href='{% static "img/gallery/gallery-1.jpg" %}' class="gallery-lightbox">
-                <img src='{% static "img/gallery/gallery-1.jpg" %}' alt="" class="img-fluid">
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="150">
-              <a href='{% static "img/gallery/gallery-2.jpg" %}' class="gallery-lightbox">
-                <img src='{% static "img/gallery/gallery-2.jpg" %}'  alt="" class="img-fluid">
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
-              <a href='{% static "img/gallery/gallery-3.jpg" %}' class="gallery-lightbox">
-                <img src='{% static "img/gallery/gallery-3.jpg" %}' alt="" class="img-fluid">
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="250">
-              <a href='{% static "img/gallery/gallery-4.jpg" %}' class="gallery-lightbox">
-                <img src='{% static "img/gallery/gallery-4.jpg" %}'  alt="" class="img-fluid">
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300">
-              <a href='{% static "img/gallery/gallery-5.jpg" %}' class="gallery-lightbox">
-                <img src='{% static "img/gallery/gallery-5.jpg" %}' alt="" class="img-fluid">
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="350">
-              <a href='{% static "img/gallery/gallery-6.jpg" %}' class="gallery-lightbox">
-                <img src='{% static "img/gallery/gallery-6.jpg" %}' alt="" class="img-fluid">
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="400">
-              <a href='{% static "img/gallery/gallery-7.jpg" %}' class="gallery-lightbox">
-                <img src='{% static "img/gallery/gallery-7.jpg" %}' alt="" class="img-fluid">
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="450">
-              <a href='{% static "img/gallery/gallery-8.jpg" %}' lass="gallery-lightbox">
-                <img src='{% static "img/gallery/gallery-8.jpg" %}' alt="" class="img-fluid">
-              </a>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- End Gallery Section -->
-
-    <!-- ======= Testimonials Section ======= -->
-    <section id="testimonials" class="testimonials">
-      <div class="container">
-
-        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
-          <div class="swiper-wrapper">
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src='{% static "img/testimonials/testimonials-1.jpg" %}' class="testimonial-img" alt="">
-                <h3>Saul Goodman</h3>
-                <h4>Ceo &amp; Founder</h4>
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src='{% static "img/testimonials/testimonials-2.jpg" %}' class="testimonial-img" alt="">
-                <h3>Sara Wilsson</h3>
-                <h4>Designer</h4>
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src='{% static "img/testimonials/testimonials-3.jpg" %}' class="testimonial-img" alt="">
-                <h3>Jena Karlis</h3>
-                <h4>Store Owner</h4>
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src='{% static "img/testimonials/testimonials-4.jpg" %}' class="testimonial-img" alt="">
-                <h3>Matt Brandon</h3>
-                <h4>Freelancer</h4>
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src='{% static "img/testimonials/testimonials-5.jpg" %}' class="testimonial-img" alt="">
-                <h3>John Larson</h3>
-                <h4>Entrepreneur</h4>
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-
-      </div>
-    </section><!-- End Testimonials Section -->
-
+   
     <!-- ======= Team Section ======= -->
     <section id="team" class="team">
       <div class="container">
 
         <div class="section-title" data-aos="fade-up">
           <h2>Team</h2>
-          <p>Our Great Team</p>
+          <p>HodlHodl</p>
         </div>
 
         <div class="row" data-aos="fade-left">
@@ -552,13 +280,11 @@
             <div class="member" data-aos="zoom-in" data-aos-delay="100">
               <div class="pic"><img src='{% static "img/team/team-1.jpg" %}' class="img-fluid" alt=""></div>
               <div class="member-info">
-                <h4>Walter White</h4>
-                <span>Chief Executive Officer</span>
+                <h4>김윤지</h4>
+                <span>감정분석 모델 개발</span>
                 <div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
+                  <a href="https://github.com/wendyunji-dongguk"><i class="bi bi-github"></i></a>
+                  <a href="https://www.instagram.com/wendyunji/?hl=ko"><i class="bi bi-instagram"></i></a>
                 </div>
               </div>
             </div>
@@ -568,13 +294,11 @@
             <div class="member" data-aos="zoom-in" data-aos-delay="200">
               <div class="pic"><img src='{% static "img/team/team-2.jpg" %}' class="img-fluid" alt=""></div>
               <div class="member-info">
-                <h4>Sarah Jhonson</h4>
-                <span>Product Manager</span>
+                <h4>백수진</h4>
+                <span>웹 개발</span>
                 <div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
+                  <a href="https://github.com/sujin-create"><i class="bi bi-github"></i></a>
+                  <a href="https://www.instagram.com/baek_soojin_/?hl=ko"><i class="bi bi-instagram"></i></a>
                 </div>
               </div>
             </div>
@@ -584,13 +308,11 @@
             <div class="member" data-aos="zoom-in" data-aos-delay="300">
               <div class="pic"><img src='{% static "img/team/team-3.jpg" %}' class="img-fluid" alt=""></div>
               <div class="member-info">
-                <h4>William Anderson</h4>
-                <span>CTO</span>
+                <h4>윤수림</h4>
+                <span>감정분석 모델 개발</span>
                 <div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
+                  <a href="https://github.com/sooo19"><i class="bi bi-github"></i></a>
+                  <a href="https://www.instagram.com/forest._.yoon/?hl=ko"><i class="bi bi-instagram"></i></a>
                 </div>
               </div>
             </div>
@@ -600,13 +322,11 @@
             <div class="member" data-aos="zoom-in" data-aos-delay="400">
               <div class="pic"><img src='{% static "img/team/team-4.jpg" %}' class="img-fluid" alt=""></div>
               <div class="member-info">
-                <h4>Amanda Jepson</h4>
-                <span>Accountant</span>
+                <h4>이건우</h4>
+                <span>시계열 예측 모델 개발</span>
                 <div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
+                  <a href="https://github.com/ptah0414"><i class="bi bi-github"></i></a>
+                  <a href="https://www.instagram.com/gununoo_/?hl=ko"><i class="bi bi-instagram"></i></a>
                 </div>
               </div>
             </div>
@@ -624,73 +344,21 @@
       <div class="container">
         <div class="row">
 
-          <div class="col-lg-4 col-md-6">
             <div class="footer-info">
-              <h3>Bootslander</h3>
-              <p class="pb-3"><em>Qui repudiandae et eum dolores alias sed ea. Qui suscipit veniam excepturi quod.</em></p>
+              <h3>Coin AutoTrading</h3>
+              <p class="pb-3"><em>인공지능을 사용한 코인 자동트레이딩 사이트</em></p>
               <p>
-                A108 Adam Street <br>
-                NY 535022, USA<br><br>
-                <strong>Phone:</strong> +1 5589 55488 55<br>
-                <strong>Email:</strong> info@example.com<br>
+                <strong>Code  </strong><a href="https://github.com/sujin-create/hodlhodl"> 프로젝트 링크</a>
+                <br><br>
+                <strong>Team  </strong>동국대학교 정보통신공학과 holdhodl 팀 <br>
               </p>
-              <div class="social-links mt-3">
-                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-              </div>
             </div>
-          </div>
-
-          <div class="col-lg-2 col-md-6 footer-links">
-            <h4>Useful Links</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
-            </ul>
-          </div>
-
-          <div class="col-lg-2 col-md-6 footer-links">
-            <h4>Our Services</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
-            </ul>
-          </div>
-
-          <div class="col-lg-4 col-md-6 footer-newsletter">
-            <h4>Our Newsletter</h4>
-            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Subscribe">
-            </form>
-
-          </div>
 
         </div>
       </div>
     </div>
 
-    <div class="container">
-      <div class="copyright">
-        &copy; Copyright <strong><span>Bootslander</span></strong>. All Rights Reserved
-      </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/bootslander-free-bootstrap-landing-page-template/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-      </div>
-    </div>
+ 
   </footer><!-- End Footer -->
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
