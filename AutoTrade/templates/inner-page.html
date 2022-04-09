@@ -11,7 +11,7 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href='{% static "img/favicon.png" %}' rel="icon">
+  <link href='{% static "img/icon.png" %}' rel="icon">
   <link href='{% static "img/apple-touch-icon.png" %}' rel="apple-touch-icon">
 
   <!-- Google Fonts -->
@@ -38,21 +38,14 @@
     <div class="container d-flex align-items-center justify-content-between">
 
       <div class="logo">
-        <h1><a href="index.html"><span>Bootslander</span></a></h1>
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="index.html"><img src='{% static "img/logo.png" alt="" class="img-fluid"></a>-->
+        <h1><a href="{% url 'Home:main' %}"><span>AutoTrading</span></a></h1>
       </div>
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="">홈페이지</a></li>
-          <li><a class="nav-link scrollto" href="#about">소개</a></li>
-          <li><a class="nav-link scrollto" href="#features">기능보기</a></li>
-          <li><a class="nav-link scrollto" href="#details">기능상세보기</a></li>
-          <li><a class="nav-link scrollto" href="#AutoTrading">자동투자</a></li>
-          <li><a class="nav-link scrollto" href="#showData">데이터보기</a></li>
-          <li><a class="nav-link scrollto" href="#accuracy">성능보기</a></li>
-          <li><a class="nav-link scrollto" href="#team">Team</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'Home:detail' %}">자동투자</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'Home:detail' %}">데이터보기</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'Home:detail' %}">성능보기</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->

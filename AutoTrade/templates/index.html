@@ -11,7 +11,7 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href='{% static "img/favicon.png" %}' rel="icon">
+  <link href='{% static "img/icon.png" %}' rel="icon">
   <link href='{% static "img/apple-touch-icon.png" %}' rel="apple-touch-icon">
 
   <!-- Google Fonts -->
@@ -48,9 +48,9 @@
           <li><a class="nav-link scrollto" href="#about">소개</a></li>
           <li><a class="nav-link scrollto" href="#features">기능보기</a></li>
           <li><a class="nav-link scrollto" href="#details">기능상세보기</a></li>
-          <li><a class="nav-link scrollto" href="#AutoTrading">자동투자</a></li>
-          <li><a class="nav-link scrollto" href="#showData">데이터보기</a></li>
-          <li><a class="nav-link scrollto" href="#accuracy">성능보기</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'Home:detail' %}">자동투자</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'Home:detail' %}">데이터보기</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'Home:detail' %}">성능보기</a></li>
           <li><a class="nav-link scrollto" href="#team">Team</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
