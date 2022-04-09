@@ -36,6 +36,23 @@
         alert(a);
     </script>
 {% endif %}
+
+<style>
+    .signup_form{
+        min-width: 220px;
+        margin: 0 15px;
+        box-sizing: border-box;
+    }
+    .form-group{
+        color :#1acc8d;
+        width : 400px;
+        font-size: medium;
+        margin-left: auto;
+        margin-right: auto;
+    }
+</style>
+
+
 <body>
 
   <!-- ======= Header ======= -->
@@ -64,38 +81,49 @@
     <!-- ======= Breadcrumbs Section ======= -->
     <section class="breadcrumbs">
       <div class="container">
-
-        <form name = "signup_form" action="{% url 'Account:Signup' %}" method = "POST" >
-            {% csrf_token %}
-            <div class="form-group">
-                <label for="name">nickname</label>
-                <input class="form-control" type = "text" name = "username" >
-            </div>
-            <div class="form-group">
-                <label for="email">ID[email]</label>
-                <input class="form-control" type = "text" name = "email"  >
-            </div>
-            <div class="form-group">
-                <label for="PW">PW</label>
-                <input class="form-control" type = "password" name = "pw"  >
-            </div>
-            <div class="form-group">
-                <label for="PW2">PW check</label>
-                <input class="form-control" type = "password" name = "pw2" >
-            </div>
-            <p></p>
-            <div class = "text-center"><input class="btn btn-primary" type = "submit" value ="signup"></div>
-        </form>
-    
-
+          <p>Singup Page</p>
       </div>
     </section><!-- End Breadcrumbs Section -->
 
     <section class="inner-page">
       <div class="container">
-        <p>
-          Example inner page template
-        </p>
+        <form name = "signup_form" style = "display: block;" action="{% url 'Account:Signup' %}" method = "POST" >
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="name">nickname</label>
+                <input class="form-control" type = "text" name = "username" >
+                <small id="nicknamewordHelpInline" class="text-muted">
+                    중복된 nickname은 안 됩니다.
+                </small>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="email">ID[email]</label>
+                <input class="form-control" type = "text" name = "email"  >
+                <small id="emailwordHelpInline" class="text-muted">
+                    중복된 이메일은 안 됩니다.
+                </small>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="PW">PW</label>
+                <input class="form-control" type = "password" name = "pw"  >
+                <small id="passwordHelpInline" class="text-muted">
+                    Must be 6-10 characters long.(6-10자만 유효합니다.)
+                </small>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="PW2">PW check</label>
+                <input class="form-control" type = "password" name = "pw2" >
+                <small id="passwordHelpInline" class="text-muted">
+                    pw와 일치해야합니다.
+                </small>
+            </div>
+            <br>
+            <div class = "text-center"><input class="btn btn-outline-success" type = "submit" value ="signup"></div>
+        </form>
+    
       </div>
     </section>
 

@@ -36,6 +36,29 @@
         alert(a);
     </script>
 {% endif %}
+
+<style>
+    .form-group{
+        color :#1acc8d;
+        width : 400px;
+        font-size: medium;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .login_form{
+        box-sizing: border-box;
+        width: 460px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 3;
+        margin-top: -8px;
+        border: 1px solid #c6c6c6;
+        border-radius: 6px;
+        background-color: #fff;
+        box-shadow: 0 5px 8px 0 rgb(68 68 68 / 4%);
+    }
+</style>
+
 <body>
 
   <!-- ======= Header ======= -->
@@ -69,18 +92,24 @@
     </section><!-- End Breadcrumbs Section -->
     <section class="inner-page">
       <div class="container">
-        <form name = "signup_form" action="{% url 'Account:Login' %}" method = "POST" >
+        <form class = "login_form" style = "display: block;" name = "signup_form" action="{% url 'Account:Login' %}" method = "POST" >
             {% csrf_token %}
+            <br>
+            <br>
             <div class="form-group">
                 <label for="email">ID[email]</label>
                 <input class="form-control" type = "text" name = "email"  >
             </div>
+            <br>
             <div class="form-group">
                 <label for="PW">PW</label>
                 <input class="form-control" type = "password" name = "pw"  >
             </div>
-            <p></p>
-            <div class = "text-center"><input class="btn btn-primary" type = "submit" value ="login"></div>
+            <br>
+            <div class = "text-center"><input class="btn btn btn-outline-success" type = "submit" value ="login"></div>
+            <br>
+            
+            <br>
         </form>
     
       </div>
