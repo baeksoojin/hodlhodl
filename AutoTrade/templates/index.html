@@ -62,6 +62,9 @@
             </ul>
           </li>
           <li><a class="nav-link scrollto" href="#team">Team</a></li>
+          {% if request.session.email %}
+            <li><a style="color:black" class="navbar-text">{{request.session.username}}님</a></li>
+          {% endif %}
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
