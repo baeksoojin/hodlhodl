@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'main',
     'Account',
+    'CoinTrading',
 
 ]
 
@@ -94,8 +95,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'AutoTrade',
-        'USER': 'hodl',
+        'USER': 'hodluser',
         "PASSWORD": env('DB_PW'),
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
 
