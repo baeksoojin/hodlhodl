@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'main',
     'Account',
+    'CoinTrading',
 
 ]
 
@@ -93,6 +94,7 @@ WSGI_APPLICATION = 'AutoTrade.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
+
         'NAME': 'AutoTrading',
         'USER': 'admin',
         "PASSWORD": env('DB_PW'),

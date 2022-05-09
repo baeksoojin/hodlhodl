@@ -30,6 +30,52 @@
   <!-- Template Main CSS File -->
   <link href='{% static "css/style.css" %}' rel="stylesheet">
 
+  <!--candelchart-->
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    //res_data를 가져와서 사용.
+    const data = JSON.parse("{{ res_data|escapejs }}");
+
+    const context = 
+      {'open': data.open, 
+      'close': data.close, 
+      'high': data.high, 
+      'low': data.low,
+      'date': data.date,
+      }
+
+    function drawChart() {
+      const data = google.visualization.arrayToDataTable([
+        [context['date'][0], context['low'][0], context['open'][0], context['close'][0], context['high'][0]],
+        [context['date'][1], context['low'][1], context['open'][1], context['close'][1], context['high'][1]],
+        [context['date'][2], context['low'][2], context['open'][2], context['close'][2], context['high'][2]],
+        [context['date'][3], context['low'][3], context['open'][3], context['close'][3], context['high'][3]],
+        [context['date'][4], context['low'][4], context['open'][4], context['close'][4], context['high'][4]],
+        [context['date'][5], context['low'][5], context['open'][5], context['close'][5], context['high'][5]],
+        [context['date'][6], context['low'][6], context['open'][6], context['close'][6], context['high'][6]],
+      ], true);
+
+    const options = {
+      
+      backgroundColor: { fill:'transparent' },
+      hAxis:{baselineColor:'green'},
+      legend:'none',
+      candlestick: {
+        fallingColor: { stroke:'blue', strokeWidth: 0, fill: 'blue' }, // blue
+        risingColor: { stroke:'red', strokeWidth: 0, fill: 'red' },   // red 
+      },
+      colors: ['#1acc8d']
+    };
+
+      const chart = new google.visualization.CandlestickChart(document.getElementById('chart_div'));
+
+      chart.draw(data, options); //캔들차트 그리기
+    } 
+  </script>
+
 </head>
 
 <body>
@@ -44,7 +90,7 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto" href="{% url 'CoinTrading:situation' %}">자동투자</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'Home:detail' %}">자동투자</a></li>
           <li><a class="nav-link scrollto" href="{% url 'Home:detail' %}">데이터보기</a></li>
           <li><a class="nav-link scrollto" href="{% url 'Home:detail' %}">성능보기</a></li>
         </ul>
@@ -54,17 +100,17 @@
     </div>
   </header><!-- End Header -->
 
-  <main id="main">
-
+  <main id="main" >
+ 
     <!-- ======= Breadcrumbs Section ======= -->
     <section class="breadcrumbs">
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h2>Inner Page</h2>
+          <h2>자동투자 현황보기</h2>
           <ol>
             <li><a href="{% url 'Home:main' %}">Home</a></li>
-            <li>Inner Page</li>
+            <li>자동투자</li>
           </ol>
         </div>
 
@@ -72,10 +118,18 @@
     </section><!-- End Breadcrumbs Section -->
 
     <section class="inner-page">
-      <div class="container">
-        <p>
-          Example inner page template
-        </p>
+      <div class="container" >
+        <div class="row">
+        <!--inner page-->
+        <div class="col-sm" style="text-align: center; ">
+          <p style="font-size: large; ">7일동안의 코인 현황</p>
+          <div id="chart_div" style="width: 120%; height: 800px; align-content: center; "></div>
+        </div>
+        <div class="col-sm" style="text-align: center;">
+          <p style="font-size: large; ">7일동안의 트레이딩 현황</p>
+        </div>
+      </div>
+        
       </div>
     </section>
 
@@ -117,6 +171,7 @@
 
   <!-- Template Main JS File -->
   <script src='{% static "js/main.js"%}' ></script>
+  <!-- <script src= '{% static "js/candelchart.js"}'></script> -->
 
 </body>
 
