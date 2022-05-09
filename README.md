@@ -27,7 +27,9 @@ pip install -r requirments.txt
 ```c
 DEBUG=on
 SECRET_KEY="장고 secret_key 입력"
-DB_PW="mysql hodl(사용자명)의 비밀번호 입력"
+DB_PW="admin의 password입력"
+access="upbit-api access-key입력"
+secret="upbit-api secret-key입력"
 ```
 
 ## 1. 실행방법

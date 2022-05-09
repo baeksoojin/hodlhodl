@@ -94,11 +94,15 @@ WSGI_APPLICATION = 'AutoTrade.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'AutoTrade',
-        'USER': 'hodluser',
+
+        'NAME': 'AutoTrading',
+        'USER': 'admin',
         "PASSWORD": env('DB_PW'),
-        'HOST': 'localhost',
+        'HOST': 'autotrading-db.cjolqhecq70a.ap-northeast-2.rds.amazonaws.com',                    
         'PORT': '3306',
+        'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
+        },
     }
 }
 
