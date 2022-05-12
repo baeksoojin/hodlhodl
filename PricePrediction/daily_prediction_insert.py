@@ -126,7 +126,7 @@ def predict_start():
 
     pred = model.predict(test_data)
 
-    df_actu = df_org[-294:]
+    df_actu = df_org[-len(pred):]
 
     df_actu["pred"] = restore(pred)
     df_actu = df_actu[["close", "pred"]]
