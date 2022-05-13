@@ -125,7 +125,9 @@ def predict_start():
 
     model.load_weights(filename)
 
+    print("start predicting")
     pred = model.predict(test_data)
+    print("done predicting")
 
     df_actu = df_org[-len(pred):]
 
@@ -134,10 +136,10 @@ def predict_start():
 
     prediction_data = df_actu
 
-
-    # date값이 Unnamed: 0 으로 되어있으니까 수정후 작업 진행.
-    prediction_data.rename(columns = {'Unnamed: 0' : 'date'}, inplace = True)
-
+    prediction_data.reset_index(inplace=True)
+    prediction_data = prediction_data.rename(columns={"index": "date"})
+    
+    print("start adding")
     # lstm을 활용한 prediction값 모두 저장.
 
     conn = pymysql.connect(host='autotrading-db.cjolqhecq70a.ap-northeast-2.rds.amazonaws.com',
@@ -152,12 +154,14 @@ def predict_start():
     prediction_data['date'] = pd.to_datetime(prediction_data['date']).dt.date
 
 
-    sql_row = [(prediction_data['date'][-1],prediction_data['pred'][-1])]
+    sql_row = [(prediction_data['date'][len(pred)-1],prediction_data['pred'][len(pred)-1])]
 
 
     insert_result = """insert into prediction(prediction_date,pred_price) values (%s, %s, %s)"""
     curs.executemany(insert_result,sql_rows)
     conn.commit()
     conn.close()
+    
+    print("successfully added")
 
-schedule.every().day.at("09:01").do(lambda: predict_start())
+schedule.every().day.at("00:01").do(lambda: predict_start()) # 한국시간 09:01 => 서버시간 0:01
