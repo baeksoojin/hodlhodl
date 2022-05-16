@@ -52,7 +52,7 @@ def predict_start():
 
     # inverse transform
     def restore(row):
-    return row * (max(df_drop["close"]) - min(df_drop["close"])) + min(df_drop["close"])
+        return row * (max(df_drop["close"]) - min(df_drop["close"])) + min(df_drop["close"])
 
 
     scaler = MinMaxScaler()
@@ -157,7 +157,7 @@ def predict_start():
     sql_row = [(prediction_data['date'][len(pred)-1],prediction_data['pred'][len(pred)-1])]
 
 
-    insert_result = """insert into prediction(prediction_date,pred_price) values (%s, %s, %s)"""
+    insert_result = """insert into prediction(prediction_date,pred_price) values (%s, %s)"""
     curs.executemany(insert_result,sql_rows)
     conn.commit()
     conn.close()
@@ -165,3 +165,6 @@ def predict_start():
     print("successfully added")
 
 schedule.every().day.at("00:01").do(lambda: predict_start()) # 한국시간 09:01 => 서버시간 0:01
+
+while True:
+    schedule.run_pending()
