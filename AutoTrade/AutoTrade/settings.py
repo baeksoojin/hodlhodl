@@ -52,6 +52,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'main',
     'Account',
+    'CoinTrading',
+    'Sentiment',
 
 ]
 
@@ -88,14 +90,21 @@ WSGI_APPLICATION = 'AutoTrade.wsgi.application'
 
 
 # Database
+
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'AutoTrade',
-        'USER': 'hodl',
+
+        'NAME': 'AutoTrading',
+        'USER': 'admin',
         "PASSWORD": env('DB_PW'),
+        'HOST': 'autotrading-db.cjolqhecq70a.ap-northeast-2.rds.amazonaws.com',                    
+        'PORT': '3306',
+        'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
+        },
     }
 }
 
