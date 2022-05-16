@@ -6,7 +6,7 @@ import json
 # Create your views here.
 def sentiment_piechart(request):
     
-    sentiment = Sentiment.objects.first()
+    sentiment = Sentiment.objects.last() #가장 최신값을 불러와서 보여줌
     print(sentiment)
     res_data = model_to_dict(sentiment)
     print(res_data)
