@@ -152,7 +152,7 @@ def predict_start():
 
     history = model.fit(train_data, 
                         validation_data=(test_data), 
-                        epochs=50, 
+                        epochs=5, 
                         callbacks=[checkpoint, earlystopping])
 
     model.load_weights(filename)
