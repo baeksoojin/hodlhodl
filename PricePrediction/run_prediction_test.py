@@ -48,7 +48,7 @@ def predict_start():
     
     
     # 공휴일 vix 가격을 전날 가격으로 대치 
-    df = join_data.fillna(method = "ffill")
+    df = df.fillna(method = "ffill")
     
     
     # stationary -> non-stationary
