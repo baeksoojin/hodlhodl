@@ -8,7 +8,7 @@ import json
 # Create your views here.
 def prediction_linechart(request):
 
-    predictions = Prediction.objects.all().order_by('-id')[:100] # 앞의 5개는 종가를아직 넣지 않아서 뒤에 값들로만 시각화
+    predictions = Prediction.objects.all().order_by('id')
     res_data=[]
     for prediction in predictions:
         data = model_to_dict(prediction)
