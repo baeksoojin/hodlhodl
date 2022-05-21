@@ -17,15 +17,35 @@ import pymysql
 import schedule
 import yfinance as yf
 from datetime import datetime
+import pytrends
+from pytrends.request import TrendReq
 
 
 def predict_start():
+    # google trends
+    keyword = ["bitcoin"]
+    startdate = "2017-09-25"
+    enddate = str(datetime.today()).split(" ")[0]
+    timerange = startdate + " " + enddate
+    
+    result = pd.DataFrame()
+    pytrends = TrendReq()
+    pytrends.build_payload(kw_list=keyword, timeframe=timerange)
+    trends = pytrends.interest_over_time()
+    
+    trends = trends[["bitcoin"]]
+    trends = trends.reset_index()
+    trends = trends.rename(columns={"date": "Date", "bitcoin": "trends"})
+    
+    
+    # vix
     final = datetime.today()
     vix = yf.download('^VIX', interval='1d', start="2017-09-25", end=final)['Close']
     vix = pd.DataFrame(vix)
     vix_close = vix.rename(columns={"Close": "vix_close"})
     
     
+    # upbit 
     access = "key"
     secret = "key"
 
@@ -50,30 +70,31 @@ def predict_start():
     # 공휴일 vix 가격을 전날 가격으로 대치 
     df = df.fillna(method = "ffill")
     
+    # trends 데이터를 df에 결합
+    df = pd.merge(df, trends, on="Date", how="outer")
     
-    # stationary -> non-stationary
-    df["open_diff"] = df["open"] - df["open"].shift(1)
-    df["high_diff"] = df["high"] - df["high"].shift(1)
-    df["low_diff"] = df["low"] - df["low"].shift(1)
-    df["close_diff"] = df["close"] - df["close"].shift(1)
-
-    df2 = df[["open_diff", "high_diff", "low_diff", "close_diff", "volume", "close", "vix_close"]]
-
+    # 주간 트렌드를 일별로 채우기
+    df = df.fillna(method="ffill")
+    df = df.fillna(method="bfill")
+    
+    df2 = df
+    
     # smoothing by MA
-    df2["close_diff_ma5"] = df2["close_diff"].rolling(window=5).mean()
-    df2["close_diff_ma10"] = df2["close_diff"].rolling(window=10).mean()
-    df2["close_diff_ma20"] = df2["close_diff"].rolling(window=20).mean()
-    df2["close_diff_ma60"] = df2["close_diff"].rolling(window=60).mean()
+    df2["close_ma5"] = df2["close"].rolling(window=5).mean()
+    df2["close_ma10"] = df2["close"].rolling(window=10).mean()
+    df2["close_ma20"] = df2["close"].rolling(window=20).mean()
+    df2["close_ma60"] = df2["close"].rolling(window=60).mean()
     
-    df2["vix_close_diff_ma5"] = df2["vix_close"].rolling(window=5).mean()
-    df2["vix_close_diff_ma10"] = df2["vix_close"].rolling(window=10).mean()
-    df2["vix_close_diff_ma20"] = df2["vix_close"].rolling(window=20).mean()
-    df2["vix_close_diff_ma60"] = df2["vix_close"].rolling(window=60).mean()
+    df2["vix_close_ma5"] = df2["vix_close"].rolling(window=5).mean()
+    df2["vix_close_ma10"] = df2["vix_close"].rolling(window=10).mean()
+    df2["vix_close_ma20"] = df2["vix_close"].rolling(window=20).mean()
+    df2["vix_close_ma60"] = df2["vix_close"].rolling(window=60).mean()
     
-    df = df2[["close_diff_ma5", "close_diff_ma10", "close_diff_ma20", "close_diff_ma60", "close", 
-              "vix_close_diff_ma5", "vix_close_diff_ma10", "vix_close_diff_ma20", "vix_close_diff_ma60"]]
+    df = df2[["close_ma5", "close_ma10", "close_ma20", "close_ma60", 
+              "vix_close_ma5", "vix_close_ma10", "vix_close_ma20", "vix_close_ma60",
+              "trends", "close"]]
     
-
+    # ma로 인해 생긴 결측 제거
     df = df.dropna()
     df_drop = df
 
@@ -85,10 +106,10 @@ def predict_start():
 
 
     scaler = MinMaxScaler()
-    # 스케일을 적용할 column을 정의합니다.
-
-    scale_cols = ["close_diff_ma5", "close_diff_ma10", "close_diff_ma20", "close_diff_ma60", "close", 
-                  "vix_close_diff_ma5", "vix_close_diff_ma10", "vix_close_diff_ma20", "vix_close_diff_ma60"]
+    # 스케일을 적용할 column을 정의
+    scale_cols = ["close_ma5", "close_ma10", "close_ma20", "close_ma60", 
+                  "vix_close_ma5", "vix_close_ma10", "vix_close_ma20", "vix_close_ma60",
+                  "trends", "close"]
     
     # 스케일 후 columns
     scaled = scaler.fit_transform(df[scale_cols])
@@ -196,4 +217,7 @@ def predict_start():
     
     print("successfully added")
 
-predict_start()
+schedule.every().day.at("00:01").do(lambda: predict_start()) # 한국시간 09:01 => 서버시간 0:01
+
+while True:
+    schedule.run_pending()
