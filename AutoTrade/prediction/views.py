@@ -6,7 +6,7 @@ import json
 
 
 # Create your views here.
-def prediction_linechart(request):
+def prediction_result(request):
 
     predictions = Prediction.objects.all().order_by('id')
     res_data=[]
@@ -17,4 +17,4 @@ def prediction_linechart(request):
 
     res_data=json.dumps(res_data)
 
-    return render(request,"AI_result/linechart.html",{'res_data' : res_data})
+    return render(request,"AI_result/prediction.html",{'res_data' : res_data})

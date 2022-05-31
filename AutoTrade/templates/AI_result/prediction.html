@@ -84,7 +84,8 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto" href="{% url 'CoinTrading:situation' %}">자동투자</a></li>
-          <li><a class="nav-link scrollto" href="{% url 'Sentiment:sentiment_piechart' %}">데이터보기</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'Sentiment:sentiment_result' %}">감성분석</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'prediction:prediction_result' %}">시계열분석</a></li>
           <li><a class="nav-link scrollto" href="{% url 'Home:detail' %}">성능보기</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -117,10 +118,7 @@
                 <div id="linechart" style="width: 100%; height: 600px; align-content: center; "></div>
             </div>
             <p style="font-size: medium; color: darkgreen; margin-top: 5%;" id="predict"></p>   
-            <div class="col-sm" style="text-align: center; ">
-                <div  style="width: 170%; height: 800px; align-content: center; "></div>
-                <p style="font-size: large; color: darkgreen; margin-top: 20%;" id="predict"></p>   
-            </div>
+            
       </div>
     </section>
 
