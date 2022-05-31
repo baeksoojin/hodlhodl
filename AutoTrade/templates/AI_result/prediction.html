@@ -47,12 +47,16 @@
     data.addColumn('string', 'Day');
     data.addColumn('number', '실제가');
     data.addColumn('number', '예측가');
+    data.addColumn('number', 'ma5');
+    data.addColumn('number', 'ma20');
+    data.addColumn('number', 'ma60');
+    data.addColumn('number', 'ma120');
 
     const datas =[]
     let i=0;
     console.log(prediction.length);
     for(i; i<prediction.length; i++){
-        datas.push( [prediction[i]['prediction_date'], prediction[i]['close_price'], prediction[i]['pred_price']])
+        datas.push( [prediction[i]['prediction_date'], prediction[i]['close_price'],prediction[i]['pred_price'], prediction[i]['ma5'],prediction[i]['ma20'],prediction[i]['ma60'],prediction[i]['ma120']])
     }
     data.addRows(datas);
 

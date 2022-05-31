@@ -59,10 +59,12 @@ def get_ohlc_context(ticker,days):
         context["high"].append(high)
         context["low"].append(low)
         context["date"].append(date)
+
+    print(context)
     
     # context = json.dumps(context)
     # print(context)
     #장고에서 넘길때는 return render(request, 'AutoTrading.html', {'context': context}) 으로 사용
     return context
 
-
+get_ohlc_context(ticker,days)
