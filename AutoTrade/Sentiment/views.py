@@ -1,5 +1,5 @@
 from django.shortcuts import redirect, render
-from Sentiment.models import Sentiment, Comments, Topten
+from Sentiment.models import Sentiment, Comments, WordcloudTable
 from django.forms.models import model_to_dict
 from django.core import serializers
 import json
@@ -38,14 +38,14 @@ def sentiment_result(request):
     count = [50,40,30,10,9,8,7,6,5,4]
     #10개의 데이터를 임의로 설정하여 저장
     # for i in range(0,10):
-    #     topten = Topten()
-    #     topten.crawling_date = Sentiment.objects.get(crawling_date = "2022-05-25")
-    #     topten.word = word[i]
-    #     topten.count = count[i]
-    #     topten.save()
+    #     wordcloud = WordcloudTable()
+    #     wordcloud.crawling_date = Sentiment.objects.get(crawling_date = "2022-05-25")
+    #     wordcloud.word = word[i]
+    #     wordcloud.count = count[i]
+    #     wordcloud.save()
 
-    topten = Topten.objects.all()
-    res_data2=serializers.serialize("json",topten)
+    wordcloud = WordcloudTable.objects.all()
+    res_data2=serializers.serialize("json",wordcloud)
 
 
     return render(request,"AI_result/sentiment.html",{'res_data' : res_data, 'res_data2' : res_data2})

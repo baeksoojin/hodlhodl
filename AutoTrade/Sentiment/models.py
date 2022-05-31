@@ -17,18 +17,19 @@ class Sentiment(models.Model):
 class Comments(models.Model):
     crawling_date = models.ForeignKey('Sentiment', models.DO_NOTHING, db_column='crawling_date')
     comment = models.TextField()
-    semtiment = models.CharField(max_length=8)
+    sentiment = models.CharField(max_length=8)
     weight = models.FloatField()
+    vote = models.IntegerField()
 
     class Meta:
         managed = False
         db_table = 'comments'
 
-class Topten(models.Model):
+class WordcloudTable(models.Model):
     crawling_date = models.ForeignKey(Sentiment, models.DO_NOTHING, db_column='crawling_date')
     word = models.CharField(max_length=50)
     count = models.IntegerField()
 
     class Meta:
         managed = False
-        db_table = 'topten'
+        db_table = 'wordcloud_table'
