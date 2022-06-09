@@ -42,7 +42,7 @@
     anychart.onDocumentReady(function () {
     let i=0;
     const data=[];
-    for(i; i<10; i++){
+    for(i; i<30; i++){
       console.log(Topten[i].fields['word']);
       console.log(Topten[i].fields['count']);
 
@@ -101,8 +101,7 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto" href="{% url 'CoinTrading:situation' %}">자동투자</a></li>
-          <li><a class="nav-link scrollto" href="{% url 'Sentiment:sentiment_result' %}">감성분석</a></li>
-          <li><a class="nav-link scrollto" href="{% url 'prediction:prediction_result' %}">시계열분석</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'Sentiment:sentiment_result' %}">데이터보기</a></li>
           <li><a class="nav-link scrollto" href="{% url 'Home:detail' %}">성능보기</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
