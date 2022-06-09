@@ -31,7 +31,14 @@ def sentiment_result(request):
     
     # 각 단어의 언급량을 weight로 설정하여 워드 클라우딩을 진행한다.
 
-    wordcloud = WordcloudTable.objects.filter(crawling_date = '2021-12-29')
+    wordcloud = WordcloudTable.objects.last()
+    print(wordcloud)
+    temp = model_to_dict(wordcloud)
+    print(temp)
+    date = temp['crawling_date']
+    print(date)
+
+    wordcloud = WordcloudTable.objects.filter(crawling_date = date)
     print(wordcloud)
     
     res_data2=serializers.serialize("json",wordcloud)
