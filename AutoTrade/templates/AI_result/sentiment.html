@@ -42,7 +42,11 @@
     anychart.onDocumentReady(function () {
     let i=0;
     const data=[];
+<<<<<<< HEAD:AutoTrade/templates/AI_result/sentiment.html
     for(i; i<10; i++){
+=======
+    for(i; i<30; i++){
+>>>>>>> sentiment-analysis:AutoTrade/templates/AI_result/piechart.html
       console.log(Topten[i].fields['word']);
       console.log(Topten[i].fields['count']);
 
@@ -101,8 +105,12 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto" href="{% url 'CoinTrading:situation' %}">자동투자</a></li>
+<<<<<<< HEAD:AutoTrade/templates/AI_result/sentiment.html
           <li><a class="nav-link scrollto" href="{% url 'Sentiment:sentiment_result' %}">감성분석</a></li>
           <li><a class="nav-link scrollto" href="{% url 'prediction:prediction_result' %}">시계열분석</a></li>
+=======
+          <li><a class="nav-link scrollto" href="{% url 'Sentiment:sentiment_result' %}">데이터보기</a></li>
+>>>>>>> sentiment-analysis:AutoTrade/templates/AI_result/piechart.html
           <li><a class="nav-link scrollto" href="{% url 'Home:detail' %}">성능보기</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
