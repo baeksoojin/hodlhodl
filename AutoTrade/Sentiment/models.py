@@ -8,6 +8,10 @@ class Sentiment(models.Model):
     e_count = models.SmallIntegerField()
     k_val = models.FloatField()
     com_count = models.IntegerField()
+    n_vcount = models.SmallIntegerField()
+    p_vcount = models.SmallIntegerField()
+    e_vcount = models.SmallIntegerField()
+    com_vcount = models.SmallIntegerField()
 
     class Meta:
         managed = False
