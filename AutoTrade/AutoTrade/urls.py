@@ -23,6 +23,8 @@ urlpatterns = [
     path('',include('main.urls',namespace='Home')),
     path('user',include('Account.urls',namespace = "Account")),
     path('traiding/',include('CoinTrading.urls',namespace = "CoinTrading")),
+    path('sentiment/',include('Sentiment.urls',namespace="Sentiment")),
+    path('prediction/',include('prediction.urls',namespace="prediction")),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
