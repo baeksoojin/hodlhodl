@@ -190,7 +190,7 @@ def predict_start():
 
 
     insert_result = """insert into prediction(prediction_date,pred_price) values (%s, %s)"""
-    curs.executemany(insert_result,sql_rows)
+    curs.executemany(insert_result,sql_row)
     conn.commit()
     conn.close()
     

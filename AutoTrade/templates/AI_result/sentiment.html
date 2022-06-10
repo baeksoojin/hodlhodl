@@ -32,9 +32,34 @@
 
   <!--piechart-->
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script>
+  <script src="https://cdn.anychart.com/releases/v8/js/anychart-tag-cloud.min.js"></script>
   <script type="text/javascript">
     //res_data를 가져와서 사용.
-    const sentiment = JSON.parse("{{ res_data|escapejs }}");
+    const Topten = JSON.parse("{{ res_data2|escapejs }}");
+    console.log(Topten[0].fields);
+
+    anychart.onDocumentReady(function () {
+    let i=0;
+    const data=[];
+    for(i; i<30; i++){
+      console.log(Topten[i].fields['word']);
+      console.log(Topten[i].fields['count']);
+
+      const data_ = {"x" : Topten[i].fields['word'],"value" : Topten[i].fields['count']};
+      console.log(data_);
+      data.push(data_)
+    }
+    console.log(data);
+
+    const chart = anychart.tagCloud(data);
+    chart.container("wordcloud");
+    chart.draw();
+  });
+  </script>
+  <script type="text/javascript">
+    //res_data를 가져와서 사용.
+    const sentiment = JSON.parse("{{ res_data1|escapejs }}");
     console.log(sentiment);
 
     google.charts.load('current', {'packages':['corechart']});
@@ -44,9 +69,9 @@
 
     const data = google.visualization.arrayToDataTable([
       ['Task', 'Sentiment count per Day'],
-      ['Negative', sentiment['p_count']],
-      ['Positive', sentiment['n_count']],
-      ['Neutral', sentiment['neu_count']],
+      ['Negative', sentiment['n_vcount']],
+      ['Positive', sentiment['p_vcount']],
+      ['Neutral', sentiment['e_vcount']],
     ]);
 
     const options = {
@@ -76,7 +101,8 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto" href="{% url 'CoinTrading:situation' %}">자동투자</a></li>
-          <li><a class="nav-link scrollto" href="{% url 'Sentiment:sentiment_piechart' %}">데이터보기</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'Sentiment:sentiment_result' %}">감성분석</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'prediction:prediction_result' %}">시계열분석</a></li>
           <li><a class="nav-link scrollto" href="{% url 'Home:detail' %}">성능보기</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -107,10 +133,12 @@
         <div class="row">
           <div class="col-sm" style="text-align: center; ">
             <p style="font-size: large; ">Bitcoin 댓글 감정분석 결과</p>
-            <div id="piechart" style="width: 120%; height: 800px; align-content: center; "></div>
+            <div id="piechart" style="width: 200%; height: 800px; align-content: center; "></div>
           </div>
           <div class="col-sm" style="text-align: center; ">
-            <p style="font-size: large; ">Bitcoin 코인예측결과</p>
+             
+            <p style="font-size: large; ">Bitcoin WordCloud</p>
+            <div id="wordcloud" style="width: 120%; height: 800px; align-content: center; "></div>
             
           </div>
         </div>
