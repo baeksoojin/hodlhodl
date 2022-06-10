@@ -29,48 +29,84 @@
 
   <!-- Template Main CSS File -->
   <link href='{% static "css/style.css" %}' rel="stylesheet">
-
-  <!--piechart-->
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <script type="text/javascript">
-    //res_data를 가져와서 사용.
-    const prediction = JSON.parse("{{ res_data|escapejs }}");
-    console.log(prediction);
-    console.log(prediction[0]['close_price']); // 0
-
-    google.charts.load('current', {'packages':['line']});
+    google.charts.load('current', {'packages':['corechart']});
     google.charts.setOnLoadCallback(drawChart);
 
+    const result = JSON.parse("{{ res_data|escapejs }}");
+    console.log(result);
+
     function drawChart() {
-    
-    const data = new google.visualization.DataTable();
-    data.addColumn('string', 'Day');
-    data.addColumn('number', '실제가');
-    data.addColumn('number', '예측가');
-    data.addColumn('number', 'ma5');
-    data.addColumn('number', 'ma20');
-    data.addColumn('number', 'ma60');
-    data.addColumn('number', 'ma120');
+        const data = new google.visualization.DataTable();
+        data.addColumn('string', 'Day');
+        // data.addColumn('number', 'MDD(최대낙폭)');
+        data.addColumn('number', 'HPR%(수익률)');
+        // data.addColumn('number', 'hold_MDD(최대낙폭)');
+        data.addColumn('number', 'hold_HPR%(수익률)');
 
-    const datas =[]
-    let i=0;
-    console.log(prediction.length);
-    for(i; i<prediction.length; i++){
-        datas.push( [prediction[i]['prediction_date'], prediction[i]['close_price'],prediction[i]['pred_price'], prediction[i]['ma5'],prediction[i]['ma20'],prediction[i]['ma60'],prediction[i]['ma120']])
+        const datas =[]
+        let i=0;
+        for(i; i<result.length; i++){
+            datas.push( [result[i].pk,result[i]['fields']['hpr_percent'], result[i]['fields']['buy_hold_hpr_percent']])
+        }
+        data.addRows(datas);
+
+        const options = {
+            title: `수익률비교`,
+            subtitle: 'bitcoin',
+            legend: { position: 'bottom' },
+            series: {
+            0: { color: '#1acc8d' },
+            1: { color: 'grey' },
+          }
+        };
+
+        const chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+        chart.draw(data, options);
     }
-    data.addRows(datas);
-
-    const options = {
-      title: `시계열 예측 기법을 활용한 코인 가격 예측`,
-      subtitle: 'bitcoin'
-    };
-
-    const chart = new google.charts.Line(document.getElementById('linechart'));
     
-    chart.draw(data, google.charts.Line.convertOptions(options));
+
+  </script>
+  <script type="text/javascript">
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    const result2 = JSON.parse("{{ res_data|escapejs }}");
+    console.log(result2);
+
+    function drawChart() {
+        const data = new google.visualization.DataTable();
+        data.addColumn('string', 'Day');
+        data.addColumn('number', 'MDD(최대낙폭)');
+        // data.addColumn('number', 'HPR%(수익률)');
+        data.addColumn('number', 'hold_MDD(최대낙폭)');
+        // data.addColumn('number', 'hold_HPR%(수익률)');
+
+        const datas =[]
+        let i=0;
+        for(i; i<result2.length; i++){
+            datas.push( [result2[i].pk,result2[i]['fields']['mdd'], result2[i]['fields']['buy_hold_mdd']])
+        }
+        data.addRows(datas);
+
+        const options = {
+            title: `최대낙폭비교`,
+            subtitle: 'bitcoin',
+            legend: { position: 'bottom' },
+            series: {
+            0: { color: '#1acc8d' },
+            1: { color: 'grey' },
+          }
+        };
+
+        const chart = new google.visualization.LineChart(document.getElementById('curve_chart2'));
+
+        chart.draw(data, options);
+    }
     
-    document.getElementById("predict").innerText = `${prediction[prediction.length-1]['prediction_date']} : ${prediction[prediction.length-1]['pred_price']}원으로 예측`;
-  }
+
   </script>
 
 </head>
@@ -90,7 +126,7 @@
           <li><a class="nav-link scrollto" href="{% url 'CoinTrading:situation' %}">자동투자</a></li>
           <li><a class="nav-link scrollto" href="{% url 'Sentiment:sentiment_result' %}">감성분석</a></li>
           <li><a class="nav-link scrollto" href="{% url 'prediction:prediction_result' %}">시계열분석</a></li>
-          <li><a class="nav-link scrollto" href="{% url 'CoinTrading:result' %}">성능보기</a></li>
+           <li><a class="nav-link scrollto" href="{% url 'CoinTrading:result' %}">성능보기</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -98,17 +134,17 @@
     </div>
   </header><!-- End Header -->
 
-  <main id="main">
-
+  <main id="main" >
+ 
     <!-- ======= Breadcrumbs Section ======= -->
     <section class="breadcrumbs">
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h2>AI분석 결과</h2>
+          <h2>자동투자 현황보기</h2>
           <ol>
             <li><a href="{% url 'Home:main' %}">Home</a></li>
-            <li>데이터보기</li>
+            <li>자동투자</li>
           </ol>
         </div>
 
@@ -116,13 +152,21 @@
     </section><!-- End Breadcrumbs Section -->
 
     <section class="inner-page">
-      <div class="container">
+      <div class="container" >
         <div class="row">
+        <!--inner page-->
+      
             <div class="col-sm" style="text-align: center; ">
-                <div id="linechart" style="width: 100%; height: 600px; align-content: center; "></div>
+                <p style="font-size: large; ">수익률비교</p>
+                <div id="curve_chart" style="width: 100%; height: 800px; align-content: center; "></div>
             </div>
-            <p style="font-size: medium; color: darkgreen; margin-top: 5%;" id="predict"></p>   
+            <div class="col-sm" style="text-align: center; ">
+                <p style="font-size: large; ">최대낙폭비교</p>
+                <div id="curve_chart2" style="width: 720px; height: 800px; align-content: center; "></div>
+            </div>
             
+      </div>
+        
       </div>
     </section>
 
@@ -164,6 +208,7 @@
 
   <!-- Template Main JS File -->
   <script src='{% static "js/main.js"%}' ></script>
+  <!-- <script src= '{% static "js/candelchart.js"}'></script> -->
 
 </body>
 

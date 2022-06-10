@@ -133,7 +133,7 @@
           <li><a class="nav-link scrollto" href="{% url 'CoinTrading:situation' %}">자동투자</a></li>
           <li><a class="nav-link scrollto" href="{% url 'Sentiment:sentiment_result' %}">감성분석</a></li>
           <li><a class="nav-link scrollto" href="{% url 'prediction:prediction_result' %}">시계열분석</a></li>
-          <li><a class="nav-link scrollto" href="{% url 'Home:detail' %}">성능보기</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'CoinTrading:result' %}">성능보기</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -168,7 +168,7 @@
         </div>
         <div class="col-sm" style="text-align: center; ">
           <p style="font-size: large; ">이상값탐지</p>
-          <div id="curve_chart" style="width: 900px; height: 500px"></div>
+          <div id="curve_chart" style="width: 120%; height: 500px"></div>
         </div>
         <div class="col-sm" style="text-align: center;">
           <p style="font-size: large; ">7일동안의 트레이딩 현황</p>
