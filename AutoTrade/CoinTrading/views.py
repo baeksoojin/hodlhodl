@@ -19,3 +19,9 @@ def Situation(request):
 
     return render(request,'CoinTrading/inner.html',{'res_data' : res_data, 'res_data2':res_data2})
 
+def result(request):
+    
+    res_data=serializers.serialize("json", Result.objects.all())
+    # print(res_data)
+
+    return render(request,'CoinTrading/result.html',{'res_data' : res_data})
