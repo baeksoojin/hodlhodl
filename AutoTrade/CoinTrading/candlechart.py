@@ -36,8 +36,10 @@ def get_ohlc_context(ticker,days):
     print(df) #index값이 9시기준으로 나눠지는 날짜로 알 수 있음.
     print(df.columns) #'open', 'high', 'low', 'close', 'volume', 'value' 등이 존재함을 알 수 있음. 
     print(df.index[0]) # 0값이 가장 이전의 (가장 과거의 데이터) 데이터임을 알 수 있음
-    
+    df = df[-7:]
     context = {}
+
+    context2 =[]
 
     context["open"]=[]
     context["close"]=[]
@@ -46,6 +48,8 @@ def get_ohlc_context(ticker,days):
     context["date"]=[]
 
     for i in range(0,7):
+        date = str(df.index[i])
+        context2.append({"open":df.iloc[i][0],"high":df.iloc[i][1],"low" : df.iloc[i][2],"close" : df.iloc[i][3], "date" : date[5:10]})
 
         open = df.iloc[i][0]
         high = df.iloc[i][1]
@@ -61,10 +65,11 @@ def get_ohlc_context(ticker,days):
         context["date"].append(date)
 
     print(context)
+    print("context2=============>",context2)
     
     # context = json.dumps(context)
     # print(context)
     #장고에서 넘길때는 return render(request, 'AutoTrading.html', {'context': context}) 으로 사용
-    return context
+    return context, context2
 
 get_ohlc_context(ticker,days)
