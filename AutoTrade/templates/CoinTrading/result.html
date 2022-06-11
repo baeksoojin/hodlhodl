@@ -109,7 +109,7 @@
 
   </script>
   
-  <script type="text/javascript">
+  <!-- <script type="text/javascript">
     google.charts.load('current', {'packages':['corechart']});
     google.charts.setOnLoadCallback(drawChart);
 
@@ -127,7 +127,7 @@
       const datas =[]
       console.log(res_data2[1][0]['date']);
       let i=0;
-      for(i; i<7; i++){
+      for(i; i<20; i++){
           datas.push( [res_data2[1][i]['date'],res_data2[1][i]['high'], res_data2[1][i]['low']])
       }
       data.addRows(datas);
@@ -137,8 +137,8 @@
           subtitle: 'bitcoin',
           legend: { position: 'bottom' },
           series: {
-          0: { color: '#1acc8d' },
-          1: { color: 'grey' },
+          0: { color: 'red' },
+          1: { color: 'blue' },
         }
       };
 
@@ -146,8 +146,8 @@
 
       chart.draw(data, options);
     }
-  </script>
-  <script type="text/javascript">
+  </script> -->
+  <!-- <script type="text/javascript">
     
     google.charts.load('current', {'packages':['corechart']});
     google.charts.setOnLoadCallback(drawChart);
@@ -158,22 +158,14 @@
     function drawChart() {
         const data = new google.visualization.DataTable();
         data.addColumn('string', 'Day');
-        data.addColumn('number', '매수활성(k)기준');
-        data.addColumn('number', '매수억제(k기준)');
+        data.addColumn('number', 'k');
        
         const datas =[]
-        let i=res_data3.length-7;
-        let j=0;
-        console.log(res_data3.length-7);
+        let i=res_data3.length-20;
+        console.log(res_data3.length-20);
         console.log(res_data3.length);
         for(i; i<res_data3.length; i++){
-            if(res_data3[i]['fields']['k_val']<=0.5){
-              datas.push( [res_data3[i].pk,res_data3[i]['fields']['k_val'],0.5])
-            }
-            else{
-              datas.push( [res_data3[i].pk,0.5,res_data3[i]['fields']['k_val']])
-            }
-            j++;
+            datas.push( [res_data3[i].pk,res_data3[i]['fields']['k_val']])
         }
 
         data.addRows(datas);
@@ -183,8 +175,7 @@
             subtitle: 'bitcoin',
             legend: { position: 'bottom' },
             series: {
-            0: { color: 'red' },
-            1: { color: 'blue' }
+            0: { color: '#1acc8d' },
           }
         };
 
@@ -194,7 +185,7 @@
     }
     
 
-  </script>
+  </script> -->
 
 </head>
 
@@ -228,10 +219,10 @@
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h2>자동투자 현황보기</h2>
+          <h2>자동투자 결과보기</h2>
           <ol>
             <li><a href="{% url 'Home:main' %}">Home</a></li>
-            <li>자동투자</li>
+            <li>결과보기</li>
           </ol>
         </div>
 
@@ -251,16 +242,7 @@
                 <p style="font-size: large; ">최대낙폭비교</p>
                 <div id="curve_chart2" style="width: 100%; height: 800px; align-content: center; "></div>
             </div>
-            <div class="col-sm" style="text-align: center; ">
-              <p style="font-size: large; ">k값확인</p>
-              <div id="curve_chart3" style="width: 100%; height: 800px; align-content: center; "></div>
-          </div>
-          <div class="col-sm" style="text-align: center; ">
-            <p style="font-size: large; ">low_high</p>
-            <div id="curve_chart4" style="width: 100%; height: 800px; align-content: center; "></div>
-        </div>
-            
-      </div>
+           
         
       </div>
     </section>

@@ -16,6 +16,8 @@ class Result(models.Model):
     mdd = models.FloatField(db_column='MDD')  # Field name made lowercase.
     buy_hold_hpr_percent = models.FloatField()
     buy_hold_mdd = models.FloatField(db_column='buy_hold_MDD')  # Field name made lowercase.
+    buy_price = models.FloatField()
+    sell_price = models.FloatField()
 
     class Meta:
         managed = False
