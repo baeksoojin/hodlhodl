@@ -48,7 +48,6 @@ python manage.py migrate
 ```
 ## 2. 설계
 <img width="1163" alt="DBschema" src="https://user-images.githubusercontent.com/74058047/174061960-cb915d33-532b-4769-a909-3d025264c95f.png">
-<img width="1163" alt="flowchart" src="https://user-images.githubusercontent.com/74058047/174062002-196040b1-1b64-4b7a-880e-02da4d9d9832.png">
 ## 3. 구현현황
 - 홈페이지
 <img width="1512" alt="홈페이지" src="https://user-images.githubusercontent.com/74058047/174060848-4cb009c2-36fb-4ea0-8e16-bb8ca1c5874f.gif">
