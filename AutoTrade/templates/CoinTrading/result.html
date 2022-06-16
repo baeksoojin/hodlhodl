@@ -65,6 +65,8 @@
         const chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
 
         chart.draw(data, options);
+        document.getElementById("hpr").innerText = `${result[result.length-1]['fields']['hpr_percent']}%의 수익률`;
+        document.getElementById("hpr_hold").innerText = `${result[result.length-1]['fields']['buy_hold_hpr_percent']}%의 수익률`;
     }
     
 
@@ -104,6 +106,9 @@
         const chart = new google.visualization.LineChart(document.getElementById('curve_chart2'));
 
         chart.draw(data, options);
+        document.getElementById("mdd").innerText = `${result2[result2.length-1]['fields']['mdd']}%의 최대낙폭`;
+        document.getElementById("mdd_hold").innerText = `${result2[result2.length-1]['fields']['buy_hold_mdd']}%의 최대낙폭`;
+        
     }
     
 
@@ -238,10 +243,14 @@
             <div class="col-sm" style="text-align: center; ">
                 <p style="font-size: large; ">수익률비교</p>
                 <div id="curve_chart" style="width: 100%; height: 800px; align-content: center; "></div>
+                <p style="font-size: large; color: darkgreen; margin-top: 5%;" id="hpr"></p>  
+                <p style="font-size: large; color: rgb(84, 85, 84); margin-top: 5%;" id="hpr_hold"></p>   
             </div>
             <div class="col-sm" style="text-align: center; ">
                 <p style="font-size: large; ">최대낙폭비교</p>
                 <div id="curve_chart2" style="width: 100%; height: 800px; align-content: center; "></div>
+                <p style="font-size: medium; color: darkgreen; margin-top: 5%;" id="mdd"></p>  
+                <p style="font-size: medium; color: rgb(84, 85, 84); margin-top: 5%;" id="mdd_hold"></p>   
             </div>
            
         

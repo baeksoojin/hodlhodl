@@ -25,7 +25,7 @@
   <link href='{% static "vendor/glightbox/css/glightbox.min.css" %}' rel="stylesheet">
   <link href='{% static "vendor/remixicon/remixicon.css" %}' rel="stylesheet">
   <link href='{% static "vendor/swiper/swiper-bundle.min.css" %}' rel="stylesheet">
-
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   <!-- Template Main CSS File -->
   <link href='{% static "css/style.css" %}'  rel="stylesheet">
 </head>
@@ -127,7 +127,7 @@
 
           <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5" data-aos="fade-left">
             <h3>코인 자동매매 프로그램을 경험하세요</h3>
-            <p>  팀 hodlhodl은 AutoTrade 사이트를 통해 코인 자동매매 기능을 제공합니다. 코인에 대한 감정분석 결과와 종가 예측 결과 그리고 변동성 돌파전략을 종합하여 코인 최대낙폭을 줄여 안정적인 투자가 가능합니다.</p>
+            <p>  팀 hodlhodl은 AutoTrade 사이트를 통해 코인 자동매매 기능을 제공합니다. 코인에 대한 감성분석 결과와 종가 예측 결과 그리고 변동성 돌파전략을 종합하여 코인 최대낙폭을 줄여 안정적인 투자가 가능합니다.</p>
 
             <div class="icon-box" data-aos="zoom-in" data-aos-delay="100">
               <div class="icon"><i class="bx bx-fingerprint"></i></div>
@@ -137,14 +137,20 @@
 
             <div class="icon-box" data-aos="zoom-in" data-aos-delay="200">
               <div class="icon"><i class="bx bx-gift"></i></div>
-              <h4 class="title"><a href="#details">감정분석 인공지능 모델</a></h4>
-              <p class="description"> 감정분석 결과가 긍정적일때, 매수를 진행</p>
+              <h4 class="title"><a href="#details">감성분석 인공지능 모델</a></h4>
+              <p class="description"> 감성분석 결과가 긍정적일때, 매수를 진행</p>
             </div>
 
             <div class="icon-box" data-aos="zoom-in" data-aos-delay="300">
               <div class="icon"><i class="bx bx-atom"></i></div>
               <h4 class="title"><a href="#details">시계열 예측 인공지능 모델</a></h4>
               <p class="description">예측 결과 종가가 목표값보다 높을때, 매수를 진행</p>
+            </div>
+
+            <div class="icon-box" data-aos="zoom-in" data-aos-delay="200">
+              <div class="icon"><i class="bx bx-gift"></i></div>
+              <h4 class="title"><a href="#details">매도 타이밍 제공</a></h4>
+              <p class="description"> AutoEncoder로 이상값 에측후 매도 타이밍 체크</p>
             </div>
 
           </div>
@@ -171,26 +177,26 @@
           </div>
           <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
             <div class="icon-box" data-aos="zoom-in" data-aos-delay="100">
-              <i class="ri-bar-chart-box-line" style="color: #5578ff;"></i>
-              <h3>Mysql</h3>
+              <i class="bi bi-filetype-ai" style="color: #5578ff;"></i>
+              <h3>RoBERTa</h3>
             </div>
           </div>
           <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
             <div class="icon-box" data-aos="zoom-in" data-aos-delay="150">
               <i class="ri-calendar-todo-line" style="color: #e80368;"></i>
-              <h3>colab</h3>
+              <h3>colab/Jupyter notebook</h3>
             </div>
           </div>
           <div class="col-lg-3 col-md-4 mt-4 mt-lg-0">
             <div class="icon-box" data-aos="zoom-in" data-aos-delay="200">
-              <i class="ri-paint-brush-line" style="color: #e361ff;"></i>
-              <h3>LSTM</h3>
+              <i class="bi bi-filetype-ai" style="color: #e361ff;"></i>
+              <h3>Adaboost-GRU</h3>
             </div>
           </div>
           <div class="col-lg-3 col-md-4 mt-4">
             <div class="icon-box" data-aos="zoom-in" data-aos-delay="250">
               <i class="ri-database-2-line" style="color: #47aeff;"></i>
-              <h3>감정분석 인공지능 모델</h3>
+              <h3>AWS RDS(Mysql)</h3>
             </div>
           </div>
           <div class="col-lg-3 col-md-4 mt-4">
@@ -202,13 +208,19 @@
           <div class="col-lg-3 col-md-4 mt-4">
             <div class="icon-box" data-aos="zoom-in" data-aos-delay="350">
               <i class="ri-file-list-3-line" style="color: #11dbcf;"></i>
-              <h3>HTML/CSS</h3>
+              <h3>HTML/CSS/JS</h3>
             </div>
           </div>
           <div class="col-lg-3 col-md-4 mt-4">
             <div class="icon-box" data-aos="zoom-in" data-aos-delay="400">
-              <i class="ri-price-tag-2-line" style="color: #4233ff;"></i>
-              <h3>Javascript</h3>
+              <i class="fab fa-aws" style="color: red;"></i>
+              <h3>AWS Ec2</h3>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 mt-4">
+            <div class="icon-box" data-aos="zoom-in" data-aos-delay="450">
+              <i class="bi bi-filetype-ai" style="color: green;"></i>
+              <h3>AutoEncoder</h3>
             </div>
           </div>
         </div>
@@ -233,10 +245,10 @@
               <li><i class="bi bi-check"></i> 업비트 API를 활용해 코인관련 데이터를 불러옵니다.</li>
               <li><i class="bi bi-check"></i> 9시를 기준으로 시가와 종가를 계산하고 전날과 현시점을 분리합니다.</li>
               <li><i class="bi bi-check"></i> 전날의 코인데이터로 목표가를 설정하고 현재의 코인 가격을 비교합니다.</li>
-              <li><i class="bi bi-check"></i> 시계열 예측 결과와 코인에 대한 감정분석을 추가적으로 이용해 매수 결정을 내립니다.</li>
+              <li><i class="bi bi-check"></i> 시계열 예측 결과와 코인에 대한 감성분석을 추가적으로 이용해 매수 결정을 내립니다.</li>
             </ul>
             <p>
-              코인 시계열 예측 모델과 감정분석 모델 결과를 활용해, 변동성 돌파전략을 세워 매수타이밍을 체크하여 자동적으로 코인을 트레이딩 시킴으로써, 최대 낙폭을 줄여 안정적인 투자를 지속할 수 있습니다.
+              코인 시계열 예측 모델과 감성분석 모델 결과를 활용해, 변동성 돌파전략을 세워 매수타이밍을 체크하여 자동적으로 코인을 트레이딩 시킴으로써, 최대 낙폭을 줄여 안정적인 투자를 지속할 수 있습니다.
             </p>
           </div>
         </div>
@@ -246,15 +258,12 @@
             <img src='{% static "img/details-2.png" %}' class="img-fluid" alt="">
           </div>
           <div class="col-md-8 pt-5 order-2 order-md-1" data-aos="fade-up">
-            <h3>감정분석 인공지능 모델을 활용한 코인에 대한 사람들의 인식분석</h3>
+            <h3>RoBERTa를 활용한 감성분석 인공지능 모델을 활용한 코인에 대한 사람들의 인식분석</h3>
             <p class="fst-italic">
-              감정분석 결과가 긍정적일때, 매수를 진행
+              감성분석 결과가 긍정적일때, 매수를 진행
             </p>
             <p>
-              크롤링을 하여 불러온 문장 데이터를 인공지능을 활용해서 감정분석을 하고, 긍정적인 결과가 나올때 주식을 매수할 확률이 높아집니다.
-            </p>
-            <p>
-              인공지능 모델 설명(작성예정)
+              크롤링을 하여 불러온 문장 데이터를 인공지능을 활용해서 감성분석 하고, 긍정적인 결과가 나올때 주식을 매수할 확률이 높아집니다.
             </p>
           </div>
         </div>
@@ -264,13 +273,28 @@
             <img src='{% static "img/details-3.png" %}' class="img-fluid" alt="">
           </div>
           <div class="col-md-8 pt-5" data-aos="fade-up">
-            <h3>LSTM을 활용한, 시계열 예측을 통한 코인 종가 예측</h3>
+            <h3>Adaboost 시계열 예측을 통한 코인 종가 예측</h3>
             <p>예측 결과 종가가 목표값보다 높을때, 매수를 진행</p>
             <p>
               API를 통해 불러온 코인 데이터를 활용하여 인공지능 모델에 입력하고 그 결과로 나온 종가 결과가 변동성 돌파전략을 통해 구한 목표값보다 클 때 매수합니다.
             </p>
             <p>
-              인공지능 모델 설명(작성예정)
+              
+            </p>
+          </div>
+        </div>
+
+        <div class="row content">
+          <div class="col-md-4 order-1 order-md-2" data-aos="fade-left">
+            <img src='{% static "img/details-2.png" %}' class="img-fluid" alt="">
+          </div>
+          <div class="col-md-8 pt-5 order-2 order-md-1" data-aos="fade-up">
+            <h3>AutoEncoder로 이상값감지 모델 활용 매도 타이밍시 이메일 경고 서비스</h3>
+            <p class="fst-italic">
+              루나코인 및 이더리움 사태를 대비해 매도 이상값을 분석하여 매도 타이밍을 제공합니다.
+            </p>
+            <p>
+              15분간 이상값이 계속 업데이트되며 가장 최근 시점에 이상값이 발견된 경우, 등록한 메일로 경고메일을 보냅니다.
             </p>
           </div>
         </div>
@@ -293,10 +317,10 @@
 
           <div class="col-lg-3 col-md-6">
             <div class="member" data-aos="zoom-in" data-aos-delay="100">
-              <div class="pic"><img src='{% static "img/team/team-1.jpg" %}' class="img-fluid" alt=""></div>
+              <div class="pic"><img src='{% static "img/team/김윤지.png" %}' class="img-fluid" alt=""></div>
               <div class="member-info">
                 <h4>김윤지</h4>
-                <span>감정분석 모델 개발</span>
+                <span>감성분석 모델 개발</span>
                 <div class="social">
                   <a href="https://github.com/wendyunji-dongguk"><i class="bi bi-github"></i></a>
                   <a href="https://www.instagram.com/wendyunji/?hl=ko"><i class="bi bi-instagram"></i></a>
@@ -307,7 +331,7 @@
 
           <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
             <div class="member" data-aos="zoom-in" data-aos-delay="200">
-              <div class="pic"><img src='{% static "img/team/team-2.jpg" %}' class="img-fluid" alt=""></div>
+              <div class="pic"><img src='{% static "img/team/백수진.png" %}' class="img-fluid" alt=""></div>
               <div class="member-info">
                 <h4>백수진</h4>
                 <span>웹 개발</span>
@@ -321,10 +345,10 @@
 
           <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
             <div class="member" data-aos="zoom-in" data-aos-delay="300">
-              <div class="pic"><img src='{% static "img/team/team-3.jpg" %}' class="img-fluid" alt=""></div>
+              <div class="pic"><img src='{% static "img/team/윤수림.png" %}' class="img-fluid" alt=""></div>
               <div class="member-info">
                 <h4>윤수림</h4>
-                <span>감정분석 모델 개발</span>
+                <span>시계열예측 모델 개발</span>
                 <div class="social">
                   <a href="https://github.com/sooo19"><i class="bi bi-github"></i></a>
                   <a href="https://www.instagram.com/forest._.yoon/?hl=ko"><i class="bi bi-instagram"></i></a>
@@ -335,10 +359,10 @@
 
           <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
             <div class="member" data-aos="zoom-in" data-aos-delay="400">
-              <div class="pic"><img src='{% static "img/team/team-4.jpg" %}' class="img-fluid" alt=""></div>
+              <div class="pic"><img src='{% static "img/team/이건우.png" %}' class="img-fluid" alt=""></div>
               <div class="member-info">
                 <h4>이건우</h4>
-                <span>시계열 예측 모델 개발</span>
+                <span>이상값 예측 모델 개발</span>
                 <div class="social">
                   <a href="https://github.com/ptah0414"><i class="bi bi-github"></i></a>
                   <a href="https://www.instagram.com/gununoo_/?hl=ko"><i class="bi bi-instagram"></i></a>
