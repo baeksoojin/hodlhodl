@@ -49,9 +49,9 @@ python manage.py migrate
 
 ## 2. 구현현황
 - 홈페이지
-<img width="1512" alt="스크린샷 2022-06-16 오후 8 26 14" src="https://user-images.githubusercontent.com/74058047/174060848-4cb009c2-36fb-4ea0-8e16-bb8ca1c5874f.gif">
+<img width="1512" alt="홈페이지" src="https://user-images.githubusercontent.com/74058047/174060848-4cb009c2-36fb-4ea0-8e16-bb8ca1c5874f.gif">
 - 회원관리페이지
-<img width="1512" alt="스크린샷 2022-06-16 오후 8 26 14" src="https://user-images.githubusercontent.com/74058047/174061106-d1fc1178-f6e4-4979-a195-e53e78b68ed2.gif">
+<img width="1512" alt="회원관리페이지" src="https://user-images.githubusercontent.com/74058047/174061657-1e48f65e-49da-4182-a02d-a9b12c0c266c.gif">
 - 주요기능
 1. 비트코인 현황
 <img width="1512" alt="스크린샷 2022-06-16 오후 8 26 14" src="https://user-images.githubusercontent.com/74058047/174060337-b1295c17-745d-4d72-9fa8-88e0b030a181.png">
